@@ -206,7 +206,7 @@ while keep:
                 i = 0
             check = False
             break
-
+#######################################################################3
     elif sentido == "izquierda": #sentido invertido
         i-= 1
         if i < 0:
@@ -229,6 +229,7 @@ while keep:
                     contador = 0
                     time.sleep(4)
                     check = False
+                    i-=1
                     break
             elif contador == 2:# se ejecuta si se juega el +4
                 mano[i].extend(robar(4))
@@ -236,14 +237,14 @@ while keep:
                 contador = 0
                 time.sleep(4)
                 check = False
-                i+=1
+                i-=1
                 break
             elif contador == 3:#se ejecuta si se juega saltar turno
                 print(f"\n{jugadores[i].capitalize()}, el jugador anterior jugó la carta {carta} y perderas tu turno\n")
                 contador = 0
                 time.sleep(4)
                 check = False
-                i+=1
+                i-=1
                 break
 
             print(f"\n\n\nla ultima carta jugada fue: {ultima}")
@@ -277,6 +278,7 @@ while keep:
                     mano[i].remove("+4")
                     segundasCartas.append("+4")
                     ultima = color
+                    i-=1
                     break
                 if "cambiar color" in carta:
                     cambio = str(input("Seleccione el color que desea asignar: "))
@@ -284,6 +286,7 @@ while keep:
                     mano[i].remove("cambiar color")
                     segundasCartas.append("cambiar color")
                     ultima = cambio
+                    i-=1
                     break
                 if  any(item in dividir(ultima) for item in dividir(carta)):
                     ultima = carta
