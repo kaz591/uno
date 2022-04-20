@@ -5,8 +5,8 @@ import snoop
 import time
 
 #Solo inclui estos numeros y colores para tener mayor control en la creacion
-numeros = [1,2,3,4]#aca se incluye el +2, saltar turno y reversa
-colores = ["azul"]
+numeros = [1,2,3,4,5,6,"+2","saltar turno","reversa"]#aca se incluye el +2, saltar turno y reversa
+colores = ["azul","verde"]
 cartas = []
 segundasCartas = []
 mano = []
@@ -22,10 +22,15 @@ for i in range(len(numeros)):
     for a in range(len(colores)):
         x = str(numeros[i]) + " " + colores[a]
         cartas.append(x)
-#random.shuffle(cartas)
-#cartas.append("+4")
-#cartas.append("cambiar color")
-#cartas[1] = ("reversa azul")
+cartas.append("+4")
+cartas.append("+4")
+cartas.append("+4")
+cartas.append("+4")
+cartas.append("cambiar color")
+cartas.append("cambiar color")
+cartas.append("cambiar color")
+cartas.append("cambiar color")
+random.shuffle(cartas)
 print(cartas)
         #cartas.extend([x, x]) #Activar para duplicar las cartas en el mazo
 
@@ -116,6 +121,7 @@ while keep:
                     contador = 0
                     time.sleep(4)
                     check = False
+                    i+=1
                     break
             elif contador == 2:# se ejecuta si se juega el +4
                 mano[i].extend(robar(4))
@@ -123,17 +129,19 @@ while keep:
                 contador = 0
                 time.sleep(4)
                 check = False
+                i+= 1
                 break
             elif contador == 3:#se ejecuta si se juega saltar turno
                 print(f"\n{jugadores[i].capitalize()}, el jugador anterior jugó la carta {carta} y perderas tu turno\n")
                 contador = 0
                 time.sleep(4)
                 check = False
+                i+=1
                 break
 
             print(f"\n\n\nla ultima carta jugada fue: {ultima}")
             print(f"{jugadores[i].capitalize()}, tu mano es: {join(mano[i])}")
-            print(f"disponibles: {cartas}")
+            #print(f"disponibles: {cartas}")
             print(segundasCartas)
             carta = (input("Que carta deseas jugar?: "))
             print("")
@@ -171,6 +179,7 @@ while keep:
                     mano[i].remove("cambiar color")
                     segundasCartas.append("cambiar color")
                     ultima = cambio
+                    i+= 1
                     break
                 if  any(item in dividir(ultima) for item in dividir(carta)):
                     ultima = carta
@@ -227,12 +236,14 @@ while keep:
                 contador = 0
                 time.sleep(4)
                 check = False
+                i+=1
                 break
             elif contador == 3:#se ejecuta si se juega saltar turno
                 print(f"\n{jugadores[i].capitalize()}, el jugador anterior jugó la carta {carta} y perderas tu turno\n")
                 contador = 0
                 time.sleep(4)
                 check = False
+                i+=1
                 break
 
             print(f"\n\n\nla ultima carta jugada fue: {ultima}")
