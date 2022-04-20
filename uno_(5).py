@@ -4,7 +4,6 @@ import sys
 import snoop
 import time
 
-
 #Solo inclui estos numeros y colores para tener mayor control en la creacion
 numeros = [1,2,3,4]#aca se incluye el +2, saltar turno y reversa
 colores = ["azul","verde"]
@@ -59,13 +58,13 @@ def shuffle(list):
     print(segundasCartas)
     return cartas
 
-"""def nocartas(x):    NO FUNCIONÓ PORQUE LA LISTA QUEDA VACIA
+def nocartas(cartas):    #NO FUNCIONÓ PORQUE LA LISTA QUEDA VACIA
         print("Se acabaron las cartas, vamos a revolverlas nuevamente \n Brrrrrrrrr \n BRRRRRR")
         cartas = segundasCartas.copy()
         shuffle(cartas)
         segundasCartas.clear()
         print(f"Cartas revueltas.\nLa ultima carta jugada fue: {ultima}")
-        return x == cartas"""
+        return cartas
 
 #funcion que divide los arrays para poder buscar por numero o color
 def dividir(palabra):
@@ -141,11 +140,7 @@ while keep:
                 mano[i].extend(robe)
                 check = False
                 if len(cartas) < 1: #cuando las cartas se acaban se revuelven nuevamente para seguir el juego
-                    print("Se acabaron las cartas, vamos a revolverlas nuevamente \n Brrrrrrrrr \n BRRRRRR")
-                    cartas = segundasCartas.copy()
-                    shuffle(cartas)
-                    segundasCartas.clear()
-                    print(f"Cartas revueltas.\nLa ultima carta jugada fue: {ultima}")
+                    cartas = nocartas(cartas)
                     print(cartas)
                     print(segundasCartas)
                 continue
