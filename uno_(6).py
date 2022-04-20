@@ -3,10 +3,10 @@ import random
 import sys
 import snoop
 import time
-a
+
 #Solo inclui estos numeros y colores para tener mayor control en la creacion
 numeros = [1,2,3,4]#aca se incluye el +2, saltar turno y reversa
-colores = ["azul","verde"]
+colores = ["azul"]
 cartas = []
 segundasCartas = []
 mano = []
@@ -191,7 +191,7 @@ while keep:
                 print(f"No tienes la carta '{carta}' en tu mano")
                 print(f"la ultima carta jugada fue: {ultima}")
             if len(mano[i - 1]) < 1:
-                print(f"Felicitaciones {jugadores[i].capitalize()}, ganaste!")
+                print(f"Felicitaciones {jugadores[i - 1].capitalize()}, ganaste!")
                 sys.exit()
             if (len(jugadores) -1) < i:
                 i = 0
