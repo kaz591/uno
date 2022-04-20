@@ -4,7 +4,6 @@ import sys
 import snoop
 import time
 
-
 #Solo inclui estos numeros y colores para tener mayor control en la creacion
 numeros = [1,2,3,4]#aca se incluye el +2, saltar turno y reversa
 colores = ["azul","verde"]
@@ -98,7 +97,6 @@ keep = True
 while keep:
     for i in listaJugadores: #iteracion en posicion 0 y luego 1 si son 2 jugadores
         check = True
-        print(listaJugadores[i], jugadores[i])
         while check:
             if contador == 1: #se ejecuta si se juega el +2
                 if len(cartas) < 1: #cuando las cartas se acaban se revuelven nuevamente para seguir el juego
@@ -130,7 +128,7 @@ while keep:
                 check = False
                 break
 
-            print(f"\n\n\nla ultima carta jugada fue: {ultima}")
+            print(f"\n\n\n\n\nla ultima carta jugada fue: {ultima}")
             print(f"{jugadores[i].capitalize()}, tu mano es: {join(mano[i])}")
             print(f"disponibles: {cartas}")
             print(segundasCartas)
@@ -182,8 +180,7 @@ while keep:
                     if "saltar turno" in carta:
                         contador = 3
                     if "reversa" in carta:
-                        listaJugadores.reverse()
-                        print(listaJugadores)
+                        print("Sipi")
                     check = False
                 else:
                     print(f"No puedes jugar la carta: {carta}")
