@@ -3,7 +3,7 @@ import random
 import sys
 import snoop
 import time
-
+a
 #Solo inclui estos numeros y colores para tener mayor control en la creacion
 numeros = [1,2,3,4]#aca se incluye el +2, saltar turno y reversa
 colores = ["azul","verde"]
