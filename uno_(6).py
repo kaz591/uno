@@ -108,7 +108,7 @@ while keep:
         while check:
             if contador == 1: #se ejecuta si se juega el +2
                 if len(cartas) < 1: #cuando las cartas se acaban se revuelven nuevamente para seguir el juego
-                    nocartas()
+                    cartas = nocartas(cartas)
                     mano[i].extend(robar(2))
                     print(f"{jugadores[i].capitalize()}, el jugador anterior jugó la carta {ultima} por lo cual deberas robar {dividir(ultima[1])} y perder tu turno\n")
                     contador = 0
@@ -216,7 +216,7 @@ while keep:
         while check:
             if contador == 1: #se ejecuta si se juega el +2
                 if len(cartas) < 1: #cuando las cartas se acaban se revuelven nuevamente para seguir el juego
-                    nocartas()
+                    cartas = nocartas(cartas)
                     mano[i].extend(robar(2))
                     print(f"{jugadores[i].capitalize()}, el jugador anterior jugó la carta {ultima} por lo cual deberas robar {dividir(ultima[1])} y perder tu turno\n")
                     contador = 0
